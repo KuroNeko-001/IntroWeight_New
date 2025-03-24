@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './home';
 import CalendarScreen from './calendar';
@@ -10,10 +9,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
+const ButtonTab = () => {
+  return (   
+      <Tab.Navigator initialRouteName='Home'
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -26,8 +24,8 @@ const App = () => {
               iconName = focused ? 'stats-chart' : 'stats-chart-outline';
             } else if (route.name === 'Notice') {
               iconName = focused ? 'notifications' : 'notifications-outline';
-            } else if (route.name === 'Setting') {
-              iconName = focused ? 'settings' : 'settings-outline';
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'person' : 'person-outline';
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -55,10 +53,9 @@ const App = () => {
         <Tab.Screen name="Calendar" component={CalendarScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Progress" component={ProgressScreen} options={{ headerShown: false }} />
         <Tab.Screen name="Notice" component={NoticeScreen} options={{ headerShown: false }} />
-        <Tab.Screen name="Setting" component={SettingScreen} options={{ headerShown: false }} />
+        <Tab.Screen name="Profile" component={SettingScreen} options={{ headerShown: false }} />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 };
 
-export default App;
+export default ButtonTab;

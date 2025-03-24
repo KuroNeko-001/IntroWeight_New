@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity,ImageBackground } from 'react-native';
 import CheckBox from 'expo-checkbox';
 
-export default function HomeScreen({ navigate }) {
+export default function HomeScreen({ navigation }) {
   const [isSelected, setSelection] = React.useState(false);
 
   return (
@@ -10,12 +10,11 @@ export default function HomeScreen({ navigate }) {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Weight Training</Text>
       <View style={styles.bottomContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigate('Gender')}
-        >
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('GenderScreen')}>
           <Text style={styles.buttonText}>Get started</Text>
         </TouchableOpacity>
+
         <View style={styles.checkboxContainer}>
           <CheckBox
             value={isSelected}

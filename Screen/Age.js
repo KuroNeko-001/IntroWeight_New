@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function AgeScreen({ navigate }) {
+export default function AgeScreen({ navigation }) {
   const [selectedAge, setSelectedAge] = useState(null);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigate('Gender')}>
+        <TouchableOpacity onPress={() => navigation.navigate('GenderScreen')}>
           <Text style={styles.backButton}>{'<'}</Text>
         </TouchableOpacity>
         <View style={styles.progressBar}>
@@ -45,7 +45,7 @@ export default function AgeScreen({ navigate }) {
       >
         <Text style={styles.optionText}>45+</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.nextButton} onPress={() => navigate('Birthday')}>
+      <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('BirthdayScreen')}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
     </View>

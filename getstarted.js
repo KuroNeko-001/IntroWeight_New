@@ -4,7 +4,8 @@ import HomeScreen from './Screen/HomeScreen';
 import GenderScreen from './Screen/GenderScreen';
 import AgeScreen from './Screen/Age';
 import BirthdayScreen from './Screen/BirthdayScreen';
-import Home from './home';
+import ButtonTab from './buttonTab';
+import BeginnersWorkoutScreen from './begginer_wo'; // Add this line
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('Home');
@@ -20,8 +21,7 @@ export default function App() {
       case 'Birthday':
         return <BirthdayScreen navigate={setCurrentScreen} />;
       default:
-        
-        return <Home navigate={setCurrentScreen} />;
+        return <ButtonTab navigate={setCurrentScreen} />;
     }
   };
 

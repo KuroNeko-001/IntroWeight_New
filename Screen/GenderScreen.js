@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function GenderScreen({ navigate }) {
+export default function GenderScreen({ navigation }) {
   const [selectedGender, setSelectedGender] = useState(null);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigate('Home')}>
+        <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
           <Text style={styles.backButton}>{'<'}</Text>
         </TouchableOpacity>
         <View style={styles.progressBar}>
@@ -33,7 +33,7 @@ export default function GenderScreen({ navigate }) {
       >
         <Text style={styles.optionText}>Unspecified</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.nextButton} onPress={() => navigate('Age')}>
+      <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('AgeScreen')}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
     </View>

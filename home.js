@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Animated,Platform } from 'react-native';
 import { SliderBox } from 'react-native-image-slider-box';
 import Icon from 'react-native-vector-icons/FontAwesome6';
-
-
+import BegginerScreen from './begginer_wo';
 const image = require('./assets/RB-remove.png');
-
 
 
 const workoutImages = [
@@ -19,7 +17,7 @@ const workoutImages = [
 ];
 
 const workoutTitles = [
-    'Beginner \n Beginner',
+    'Beginner \n Workout',
     'Chest Muscle \n Workout',
     'Arm Muscle \n Workout',
     'Leg Muscle \n Workout',
@@ -127,6 +125,7 @@ function HomeScreen() {
                             </TouchableOpacity>
                         </View>
                     ))}
+                    
                 </View>
             </ScrollView>
         </View>
@@ -138,6 +137,9 @@ export default HomeScreen;
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
+        marginTop: Platform.OS === 'android' ? 35 : 0,
+        backgroundColor:'white',
+        opacity: 0.97,
     },
     image: {
         marginTop: 10,

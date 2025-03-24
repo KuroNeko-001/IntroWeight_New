@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-export default function BirthdayScreen({ navigate }) {
+export default function BirthdayScreen({ navigation }) {
   const [day, setDay] = useState('01');
   const [month, setMonth] = useState('01');
   const [year, setYear] = useState('2000');
@@ -14,7 +14,7 @@ export default function BirthdayScreen({ navigate }) {
     >
       <View style={styles.container}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigate('Age')}>
+          <TouchableOpacity onPress={() => navigation.navigate('AgeScreen')}>
             <Text style={styles.backButton}>{'<'}</Text>
           </TouchableOpacity>
           <View style={styles.progressBar}>
@@ -55,7 +55,7 @@ export default function BirthdayScreen({ navigate }) {
             ))}
           </Picker>
         </View>
-        <TouchableOpacity style={styles.nextButton} onPress={() => navigate('NextScreen')}>
+        <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('ButtonTab')}> 
           <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
       </View>
